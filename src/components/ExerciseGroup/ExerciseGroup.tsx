@@ -12,13 +12,15 @@ type ExerciseGroupProps = {
 const EXERCISE_GROUP_IMAGE_WIDTH = 48;
 const EXERCISE_GROUP_IMAGE_HEIGHT = 48;
 
+const PATH_PREFIX = "/exercise";
+
 export const ExerciseGroup: FC<ExerciseGroupProps> = ({
   imagePath,
   name,
   path,
 }) => {
   return (
-    <Link to={path}>
+    <Link to={`${PATH_PREFIX}${path}`}>
       <div className="flex flex-col justify-center items-center">
         <Image
           imagePath={imagePath || ""}

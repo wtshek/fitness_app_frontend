@@ -1,14 +1,16 @@
 import { FC, ReactNode, useState } from "react";
-import { TextGray } from "../Typography";
+import cx from "classnames";
+import { TextGray } from "##/components/Typography";
 
 export type ImageProps = {
   imagePath: string;
   width: number;
   height: number;
-  fallbackString?: string;
   imageClassName?: string;
   containerClassName?: string;
+  fallbackString?: string;
   fallbackImage?: ReactNode;
+  fallbackElement?: ReactNode;
 };
 
 export const Image: FC<ImageProps> = ({
@@ -17,10 +19,11 @@ export const Image: FC<ImageProps> = ({
   containerClassName,
   fallbackImage,
   fallbackString,
+  fallbackElement,
   width,
   height,
 }) => {
-  const [shouldUseFallbackString, setShouldUseFallbackString] = useState(false);
+  const [shouldUseFallback, setShouldUseFallback] = useState(false);
 
   const onImageError = ({ currentTarget }: { currentTarget: any }) => {
     if (fallbackImage) {
@@ -29,23 +32,35 @@ export const Image: FC<ImageProps> = ({
       return;
     }
 
-    setShouldUseFallbackString(true);
+    setShouldUseFallback(true);
   };
+
+  if (shouldUseFallback && fallbackString) {
+    return (
+      <div className={containerClassName}>
+        <TextGray>{fallbackString}</TextGray>
+      </div>
+    );
+  }
+
+  if (shouldUseFallback) {
+    return (
+      <div className={containerClassName}>
+        <div className={cx("bg-gray w-full h-full", imageClassName)} />
+      </div>
+    );
+  }
 
   return (
     <div className={containerClassName}>
-      {shouldUseFallbackString ? (
-        <TextGray>{fallbackString}</TextGray>
-      ) : (
-        <img
-          className={imageClassName}
-          src={imagePath}
-          alt={imagePath}
-          onError={onImageError}
-          height={height}
-          width={width}
-        />
-      )}
+      <img
+        className={imageClassName}
+        src={imagePath}
+        alt={imagePath}
+        onError={onImageError}
+        height={height}
+        width={width}
+      />
     </div>
   );
 };

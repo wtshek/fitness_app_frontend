@@ -4,7 +4,7 @@ import { fetchExerciseGroups } from "##/services/api/exercise";
 import { ExerciseGroupType } from "##/utils/types";
 import { FC, useEffect, useState } from "react";
 
-export const Exercise: FC = () => {
+export const ExerciseGroups: FC = () => {
   const [data, setData] = useState<ExerciseGroupType[]>([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export const Exercise: FC = () => {
           <ExerciseGroup
             imagePath={item.image}
             name={item.title}
-            path={item.title}
+            path={item.path}
             key={item.id}
           />
         ))}

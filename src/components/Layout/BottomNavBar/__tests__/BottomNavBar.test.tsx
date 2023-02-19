@@ -13,7 +13,7 @@ describe("BottomNavBar Test", () => {
     expect(container).toMatchInlineSnapshot(`
 <div>
   <div
-    class="fixed bottom-0 flex flex-row justify-between w-screen bg-transparent backdrop-blur-md"
+    class="fixed bottom-0 flex flex-row justify-between w-screen bg-transparent backdrop-blur-md h-mobileBottomNavBar"
   >
     <button
       class="text-white w-1/2 py-4 font-bold"

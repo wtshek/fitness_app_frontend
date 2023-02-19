@@ -1,10 +1,10 @@
-import { render, act, waitFor } from "@testing-library/react";
+import { render, act } from "@testing-library/react";
 import * as exerciseApi from "##/services/api/exercise";
-import { Exercise } from "##/pages/Exercise";
+import { ExerciseGroups } from "##/pages/ExerciseGroups";
 
 jest.mock("axios");
 
-describe("Exercise Page Tests", () => {
+describe("Exercise Groups Page Tests", () => {
   it("should request for exercise group", async () => {
     const fetchExerciseGroupsSpy = jest
       .spyOn(exerciseApi, "fetchExerciseGroups")
@@ -12,7 +12,7 @@ describe("Exercise Page Tests", () => {
 
     // eslint-disable-next-line testing-library/no-unnecessary-act
     await act(async () => {
-      render(<Exercise />);
+      render(<ExerciseGroups />);
     });
 
     expect(fetchExerciseGroupsSpy).toHaveBeenCalledTimes(1);

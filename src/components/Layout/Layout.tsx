@@ -7,9 +7,9 @@ type LayoutProps = {
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen">
+    <>
       {children}
       <BottomNavBar />
-    </div>
+    </>
   );
 };
