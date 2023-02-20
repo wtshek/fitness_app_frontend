@@ -169,3 +169,5 @@ export const ExerciseListByGroup = [
       "To perform the close grip bench press, lie down on a bench with a barbell, holding it with a narrow grip. Lower the weight to your chest, then extend your arms back to the starting position. Repeat for the desired number of reps.",
   },
 ];
+
+export const exercise = {};

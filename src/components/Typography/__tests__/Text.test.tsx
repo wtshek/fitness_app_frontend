@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
-import { Text } from "##/components/Typography";
+import { Typography } from "##/components/Typography";
 
-describe("Text Tests", () => {
+describe("Typography Tests", () => {
   it("should render text", () => {
-    const { container } = render(<Text>Hi</Text>);
+    const { container } = render(<Typography>Hi</Typography>);
     expect(container).toMatchInlineSnapshot(`
 <div>
   <div

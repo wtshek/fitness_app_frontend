@@ -29,7 +29,7 @@ export const BottomNavBar: FC = () => {
   const { pathname } = useLocation();
   const onWorkOutButtonClick = () => {};
   const onExerciseButtonClick = () => {};
-  const exerciseReg = new RegExp(PATH.EXERCISE);
+  const exerciseReg = new RegExp(PATH.EXERCISE_GROUPS);
 
   return (
     <div
@@ -45,7 +45,7 @@ export const BottomNavBar: FC = () => {
       <Button
         onClick={onExerciseButtonClick}
         isActive={exerciseReg.test(pathname)}
-        to={PATH.EXERCISE}
+        to={PATH.EXERCISE_GROUPS}
       >
         Exercises
       </Button>

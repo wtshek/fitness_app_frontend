@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { Text } from "##/components/Typography";
+import { Typography } from "##/components/Typography";
 import { Image } from "##/components/Image";
+import { PATH } from "##/utils/constant";
 
 type ExerciseGroupProps = {
   name: string;
@@ -12,15 +13,17 @@ type ExerciseGroupProps = {
 const EXERCISE_GROUP_IMAGE_WIDTH = 48;
 const EXERCISE_GROUP_IMAGE_HEIGHT = 48;
 
-const PATH_PREFIX = "/exercise";
-
 export const ExerciseGroup: FC<ExerciseGroupProps> = ({
   imagePath,
   name,
   path,
 }) => {
+  const pathname = PATH.EXERCISE_LIST.replace("/*", path);
+
+  console.log(pathname);
+
   return (
-    <Link to={`${PATH_PREFIX}${path}`}>
+    <Link to={pathname}>
       <div className="flex flex-col justify-center items-center">
         <Image
           imagePath={imagePath || ""}
@@ -29,7 +32,7 @@ export const ExerciseGroup: FC<ExerciseGroupProps> = ({
           containerClassName={`flex justify-center items-center w-24 h-24 rounded-full border-solid border-2 border-gray`}
           fallbackString={name}
         />
-        <Text className="mt-2">{name}</Text>
+        <Typography className="mt-2">{name}</Typography>
       </div>
     </Link>
   );

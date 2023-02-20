@@ -13,32 +13,34 @@ describe("ExerciseListItem Tests", () => {
     );
     expect(container).toMatchInlineSnapshot(`
 <div>
-  <div
-    class="flex mt-4 items-center"
-  >
+  <div>
     <div
-      class="w-12 h-12"
-    >
-      <img
-        alt="http://example.com/imaeg"
-        class="rounded-full"
-        height="48"
-        src="http://example.com/imaeg"
-        width="48"
-      />
-    </div>
-    <div
-      class="ml-4"
+      class="flex mt-4 items-center"
     >
       <div
-        class="text-white"
+        class="w-12 h-12"
       >
-        Example Title
+        <img
+          alt="http://example.com/imaeg"
+          class="rounded-full"
+          height="48"
+          src="http://example.com/imaeg"
+          width="48"
+        />
       </div>
       <div
-        class="text-gray"
+        class="ml-4"
       >
-        Equipment
+        <div
+          class="text-white"
+        >
+          Example Title
+        </div>
+        <div
+          class="text-white"
+        >
+          Equipment
+        </div>
       </div>
     </div>
   </div>

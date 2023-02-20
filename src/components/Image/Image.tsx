@@ -1,11 +1,11 @@
 import { FC, ReactNode, useState } from "react";
 import cx from "classnames";
-import { TextGray } from "##/components/Typography";
+import { TYPOGRAPHY_COLOR, Typography } from "##/components/Typography";
 
 export type ImageProps = {
   imagePath: string;
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
   imageClassName?: string;
   containerClassName?: string;
   fallbackString?: string;
@@ -19,7 +19,6 @@ export const Image: FC<ImageProps> = ({
   containerClassName,
   fallbackImage,
   fallbackString,
-  fallbackElement,
   width,
   height,
 }) => {
@@ -38,7 +37,7 @@ export const Image: FC<ImageProps> = ({
   if (shouldUseFallback && fallbackString) {
     return (
       <div className={containerClassName}>
-        <TextGray>{fallbackString}</TextGray>
+        <Typography color={TYPOGRAPHY_COLOR.GRAY}>{fallbackString}</Typography>
       </div>
     );
   }

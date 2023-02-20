@@ -1,11 +1,11 @@
 import { Layout } from "##/components/Layout";
-import { Text } from "##/components/Typography";
+import { Typography } from "##/components/Typography";
 import { FC } from "react";
 
 export const Home: FC = () => {
   return (
     <Layout>
-      <Text>Home</Text>
+      <Typography>Home</Typography>
     </Layout>
   );
 };

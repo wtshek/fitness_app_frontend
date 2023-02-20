@@ -1,5 +1,6 @@
 export const PATH = {
   HOME: "/",
-  EXERCISE: "/exercise",
-  EXERCISE_LIST: "/exercise/*",
+  EXERCISE_GROUPS: "/exercise-groups",
+  EXERCISE_LIST: "/exercise-groups/*",
+  EXERCISE: "/exercise/*",
 };
